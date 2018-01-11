@@ -4,14 +4,10 @@ const mongoose = require("mongoose");
 const tourSchema = mongoose.Schema({
     tourName: String,
     bandName: String,
+    createdDate: Date,
     startDate: Date,
     endDate: Date,
-    author: {
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-        }
-    },
+    author: mongoose.Schema.Types.ObjectId
 });
 
 const Tour = module.exports = mongoose.model("Tour", tourSchema)

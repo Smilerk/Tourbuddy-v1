@@ -1,0 +1,23 @@
+<div>
+  <h2 class="page-header">Create Tour</h2>
+  <form (submit)="onTourCreate()" >
+    <div class="form-group">
+      <label for="tourName">Tour Name</label>
+      <input type="text" [(ngModel)]="tourName" name="tourName" class="form-control" id="tourName" placeholder="Enter Tour Name">
+    </div>
+    <div class="form-group">
+      <label for="bandName">Band Name</label>
+      <input type="text" [(ngModel)]="bandName" name="bandName" class="form-control" id="bandName" placeholder="Band Name">
+    </div>
+    <div class="form-group">
+      <label for="email">startDate</label>
+      <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+    </div>
+    <div class="form-group">
+      <label for="password">endDate</label>
+      <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder=" Enter Password">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Create">
+  </form>
+  </div>
+  
