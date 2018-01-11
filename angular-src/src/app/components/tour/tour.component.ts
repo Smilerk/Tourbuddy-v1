@@ -25,7 +25,6 @@ export class TourComponent implements OnInit {
     private dataService: DataService) { }
 
   ngOnInit() {
-    this.author = this.authService.getUser().id;
     this.createdDate = new Date();
   }
 

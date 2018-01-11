@@ -3,19 +3,19 @@
   <form (submit)="onTourCreate()" >
     <div class="form-group">
       <label for="tourName">Tour Name</label>
-      <input type="text" [(ngModel)]="tourName" name="tourName" class="form-control" id="tourName" placeholder="Enter Tour Name">
+      <input type="text" [(ngModel)]="tourName" name="tourName" class="form-control" id="tourName" placeholder="Enter Tour Name" required>
     </div>
     <div class="form-group">
       <label for="bandName">Band Name</label>
-      <input type="text" [(ngModel)]="bandName" name="bandName" class="form-control" id="bandName" placeholder="Band Name">
+      <input type="text" [(ngModel)]="bandName" name="bandName" class="form-control" id="bandName" placeholder="Enter Band Name" required>
     </div>
     <div class="form-group">
-      <label for="email">startDate</label>
-      <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+      <label for="startDate">Start Date</label>
+      <input type="date" [(ngModel)]="startDate" name="startDate" class="form-control" id="startDate"  placeholder="Enter Start Date" required>
     </div>
     <div class="form-group">
-      <label for="password">endDate</label>
-      <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder=" Enter Password">
+      <label for="endDate">End Date</label>
+      <input type="date" [(ngModel)]="endDate" name="endDate" class="form-control" id="endDate" placeholder="Enter End Date" required> 
     </div>
     <input type="submit" class="btn btn-primary" value="Create">
   </form>

@@ -47,8 +47,8 @@ export class AuthService {
     this.authToken = token;
   }
 
-  getUser(){
-    return this.user;
+  getToken(){
+    return localStorage.getItem('id_token');
   }
 
   loggedIn() {
