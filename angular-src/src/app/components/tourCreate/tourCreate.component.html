@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h2 class="modal-title">Create Tour</h2>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form #createTourForm="ngForm" (ngSubmit)="onSubmit(createTourForm.value);activeModal.dismiss('Close click')">
+    <div class="form-group">
+      <label for="tourName">Tour Name</label>
+      <input type="text" name="tourName" class="form-control" id="tourName" placeholder="Enter Tour Name" ngModel>
+
+    </div>
+    <div class="form-group">
+      <label for="bandName">Band Name</label>
+      <input type="text" name="bandName" class="form-control" id="bandName" placeholder="Enter Band Name" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="startDate" [(ngModel)]="startDate" ngbDatepicker #a="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" (click)="a.toggle()" type="button">
+            <i class="far fa-calendar-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd" name="endDate" [(ngModel)]="endDate" ngbDatepicker #b="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" (click)="b.toggle()" type="button">
+            <i class="far fa-calendar-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Create">
+  </form>
+</div>

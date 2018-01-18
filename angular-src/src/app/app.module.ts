@@ -16,8 +16,14 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
-import { TourComponent } from './components/tour/tour.component';
+import { TourCreateComponent } from './components/tourCreate/tourCreate.component';
 import { DataService } from 'app/services/data.service';
+import { ShowTourComponent } from './components/show-tour/show-tour.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms'
+import { TourCreateModalComponent } from './components/tour-create-modal/tour-create-modal.component';
+import { UpdateService } from './services/update.service';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,7 +31,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: 'new', component: TourComponent, canActivate: [AuthGuard] }
+  { path: 'tours', component: TourCreateComponent, canActivate: [AuthGuard] }
 ]
 
 @NgModule({
@@ -37,16 +43,20 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    TourComponent
+    TourCreateComponent,
+    ShowTourComponent,
+    TourCreateModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    NgbModule.forRoot(),
+    ReactiveFormsModule,
   ],
-  providers: [ValidateService, AuthService, AuthGuard, DataService],
+  providers: [ValidateService, AuthService, AuthGuard, DataService, UpdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

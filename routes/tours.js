@@ -16,6 +16,7 @@ router.post("/new", passport.authenticate("jwt", {
             createdDate: req.body.createdDate,
             startDate: req.body.startDate,
             endDate: req.body.endDate,
+            // User id fromn request
             author: req.user._id
         });
         Tour.addTour(newTour, function (err, tour) {
@@ -33,5 +34,21 @@ router.post("/new", passport.authenticate("jwt", {
             }
         });
     });
+
+// Get all tours
+router.get("/all", passport.authenticate("jwt", {
+    session: false
+}), function (req, res, next) {
+    Tour.getTours(req.user._id, function (err, tours) {
+        if (err) throw err;
+        else {
+            res.json({
+                tours: tours
+            })
+        }
+    });
+});
+
+
 
 module.exports = router;

@@ -16,3 +16,10 @@ module.exports.addTour = function (newTour, callback) {
     // Need error catch in here somewhere.
     newTour.save(callback);
 }
+
+module.exports.getTours = function (id, callback) {
+    const query = {
+        author:id
+    }
+    Tour.find(query, callback);
+}
