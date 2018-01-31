@@ -1,12 +1,23 @@
 <div class="row">
   <div class="col-md-2 col-12">
     <app-tour-create-modal></app-tour-create-modal>
-    <div class="card" *ngFor="let tour of tours">
-      <div class="card-body">
+    <div class="card bg-success" *ngFor="let tour of tours">
+      <div class="card-body" (click)="updateSelectedTour(tour)">
         <h4 class="card-title">{{tour.tourName}}</h4>
         <p class="card-text">{{tour.bandName}}</p>
         <p class="card-text">{{tour.startDate | date:"MM/dd/yy"}} - {{tour.endDate| date:"MM/dd/yy"}}</p>
       </div>
     </div>
+  </div>
+  <div class="col-md-10 col-12">
+    <app-tour-date-create-modal></app-tour-date-create-modal>
+
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel *ngFor="let tourDate of tourDates | orderBy: 'date' " title="{{tourDate.date| date:'MM/dd/yy'}} - {{tourDate.addressInfo.city}},{{tourDate.addressInfo.state}}">
+        <ng-template ngbPanelContent>
+          {{tourDate.venueName}}
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
   </div>
 </div>

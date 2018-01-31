@@ -1,0 +1,137 @@
+<div class="modal-header">
+  <h2 class="modal-title">Create Tour Date</h2>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form #createTourDateForm="ngForm" (ngSubmit)="onSubmit(createTourDateForm.value);activeModal.dismiss('Close click')">
+    <h4>Date Info</h4>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="date">Date</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd" [(ngModel)]="date" name="date" ngbDatepicker #a="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" (click)="a.toggle()" type="button">
+              <i class="far fa-calendar-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="status">Status</label>
+        <select class="form-control" name="status" [(ngModel)]="status">
+          <option>TBA</option>
+          <option>In Progress</option>
+          <option>Booked</option>
+        </select>
+        <small class="text-muted">Where you are in the booking process</small>
+      </div>
+    </div>
+    <h4>Venue Info</h4>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="venueName">Name</label>
+        <input class="form-control" name="venueName" [(ngModel)]="venueName" type="text">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="streetAddress">Address</label>
+        <input class="form-control" name="streetAddress" [(ngModel)]="streetAddress" type="text">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="city">City</label>
+        <input class="form-control" name="city" [(ngModel)]="city" type="text">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="state">State</label>
+        <select class="form-control" name="state" [(ngModel)]="state">
+          <option value="AL">AL</option>
+          <option value="AK">AK</option>
+          <option value="AR">AR</option>
+          <option value="AZ">AZ</option>
+          <option value="CA">CA</option>
+          <option value="CO">CO</option>
+          <option value="CT">CT</option>
+          <option value="DC">DC</option>
+          <option value="DE">DE</option>
+          <option value="FL">FL</option>
+          <option value="GA">GA</option>
+          <option value="HI">HI</option>
+          <option value="IA">IA</option>
+          <option value="ID">ID</option>
+          <option value="IL">IL</option>
+          <option value="IN">IN</option>
+          <option value="KS">KS</option>
+          <option value="KY">KY</option>
+          <option value="LA">LA</option>
+          <option value="MA">MA</option>
+          <option value="MD">MD</option>
+          <option value="ME">ME</option>
+          <option value="MI">MI</option>
+          <option value="MN">MN</option>
+          <option value="MO">MO</option>
+          <option value="MS">MS</option>
+          <option value="MT">MT</option>
+          <option value="NC">NC</option>
+          <option value="NE">NE</option>
+          <option value="NH">NH</option>
+          <option value="NJ">NJ</option>
+          <option value="NM">NM</option>
+          <option value="NV">NV</option>
+          <option value="NY">NY</option>
+          <option value="ND">ND</option>
+          <option value="OH">OH</option>
+          <option value="OK">OK</option>
+          <option value="OR">OR</option>
+          <option value="PA">PA</option>
+          <option value="RI">RI</option>
+          <option value="SC">SC</option>
+          <option value="SD">SD</option>
+          <option value="TN">TN</option>
+          <option value="TX">TX</option>
+          <option value="UT">UT</option>
+          <option value="VT">VT</option>
+          <option value="VA">VA</option>
+          <option value="WA">WA</option>
+          <option value="WI">WI</option>
+          <option value="WV">WV</option>
+          <option value="WY">WY</option>
+
+        </select>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="city">Zipcode</label>
+        <input class="form-control" name="zipCode" [(ngModel)]="zipCode" type="number">
+      </div>
+    </div>
+    <h4>Show Info</h4>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="contact">Contact</label>
+        <select class="form-control" name="contact" [(ngModel)]="contact">
+          <!-- NEED TO ADD CONTACTS FOR THIS TO WORK -->
+          <option>Joey</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="bands">Bands</label>
+        <input class="form-control" name="bands" [(ngModel)]="bands" type="text">
+        <small class="text-muted">Seperate bands by comma</small>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="startTime">Start Time</label>
+        <input class="form-control" name="startTime" [(ngModel)]="startTime" type="time">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="endTime">End Time</label>
+        <input class="form-control" name="endTime" [(ngModel)]="endTime" type="time">
+      </div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Create">
+  </form>
+</div>

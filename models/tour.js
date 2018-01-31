@@ -19,7 +19,7 @@ module.exports.addTour = function (newTour, callback) {
 
 module.exports.getTours = function (id, callback) {
     const query = {
-        author:id
+        author: id
     }
     Tour.find(query, callback);
 }
