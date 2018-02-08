@@ -23,7 +23,7 @@ export class ShowTourComponent implements OnInit {
 
   // Initialize
   ngOnInit() {
-    this.updateSub = this.updateService.update.subscribe(update =>
+    this.updateSub = this.updateService.tourUpdate.subscribe(update =>
       this.update()
     );
     this.dataService.getAllTours().subscribe(
@@ -43,11 +43,12 @@ export class ShowTourComponent implements OnInit {
       }
     );
   }
+  
   updateSelectedTour(tour) {
     this.selectedTour = tour;
     this.update();
   }
-  
+
   update() {
     this.dataService.getAllTours().subscribe(
       tour => {

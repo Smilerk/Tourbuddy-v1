@@ -1,17 +1,18 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { TourDateCreateModalComponent } from './tour-date-create-modal.component';
+import { TourDateCreateModalComponent } from "./tour-date-create-modal.component";
 
-describe('TourDateCreateModalComponent', () => {
+describe("TourDateCreateModalComponent", () => {
   let component: TourDateCreateModalComponent;
   let fixture: ComponentFixture<TourDateCreateModalComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TourDateCreateModalComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [TourDateCreateModalComponent]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TourDateCreateModalComponent);
@@ -19,7 +20,7 @@ describe('TourDateCreateModalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

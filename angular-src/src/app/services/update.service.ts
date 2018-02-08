@@ -1,13 +1,18 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Injectable } from "@angular/core";
+import { Subject } from "rxjs/Subject";
 @Injectable()
 export class UpdateService {
-  private updateSource = new Subject<boolean>();
+  private tourUpdateSource = new Subject<boolean>();
+  private contactUpdateSource = new Subject<boolean>();
 
-  update = this.updateSource.asObservable();
+  tourUpdate = this.tourUpdateSource.asObservable();
+  contactUpdate = this.contactUpdateSource.asObservable();
 
-  updateTour(update: boolean) {
-    this.updateSource.next(update);
+  updateContacts(contactUpdate: boolean) {
+    this.contactUpdateSource.next(contactUpdate);
+  }
+  updateTour(tourUpdate: boolean) {
+    this.tourUpdateSource.next(tourUpdate);
   }
 
   constructor() {}

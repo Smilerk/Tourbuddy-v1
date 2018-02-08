@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../../services/auth.service";
 import { FlashMessagesService } from "angular2-flash-messages";
 import { Router } from "@angular/router";
 import { DataService } from "../../services/data.service";
@@ -37,7 +36,6 @@ export class TourDateCreateComponent implements OnInit {
   createTourDateForm: FormGroup;
 
   constructor(
-    private authService: AuthService,
     private router: Router,
     private flashMessage: FlashMessagesService,
     private dataService: DataService,
@@ -49,6 +47,7 @@ export class TourDateCreateComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.tour$.subscribe(tour => (this.tour = tour));
+   
   }
 
   onSubmit(form) {

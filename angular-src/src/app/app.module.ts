@@ -26,6 +26,10 @@ import { UpdateService } from "./services/update.service";
 import { TourDateCreateComponent } from "./components/tour-date-create/tour-date-create.component";
 import { TourDateCreateModalComponent } from "./components/tour-date-create-modal/tour-date-create-modal.component";
 import { OrderModule } from "ngx-order-pipe";
+import { ContactCreateModalComponent } from "./components/contact-create-modal/contact-create-modal.component";
+import { ContactCreateComponent } from "./components/contact-create/contact-create.component";
+import { ContactsShowComponent } from "./components/contacts-show/contacts-show.component";
+import { AuthConfig } from "angular2-jwt";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -41,6 +45,16 @@ const appRoutes: Routes = [
   {
     path: "tourDates",
     component: TourDateCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "contacts",
+    component: ContactCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "showContacts",
+    component: ContactsShowComponent,
     canActivate: [AuthGuard]
   }
 ];
@@ -58,7 +72,10 @@ const appRoutes: Routes = [
     ShowTourComponent,
     TourCreateModalComponent,
     TourDateCreateComponent,
-    TourDateCreateModalComponent
+    TourDateCreateModalComponent,
+    ContactCreateModalComponent,
+    ContactCreateComponent,
+    ContactsShowComponent
   ],
   imports: [
     BrowserModule,

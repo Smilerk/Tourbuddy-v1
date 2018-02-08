@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">State</th>
+      <th scope="col">City</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts | orderBy: 'state'">
+      <th scope="row">{{contact.state}}</th>
+      <td>{{contact.city}}</td>
+      <td>{{contact.firstName}} {{contact.lastName}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -25,7 +25,7 @@ const app = express();
 const users = require("./routes/users");
 const tours = require("./routes/tours");
 const tourDates = require("./routes/tourDates");
-const contacts = require("./models/contact");
+const contacts = require("./routes/contacts");
 
 // Port Number
 const port = 3000;
