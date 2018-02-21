@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FlashMessagesService } from "angular2-flash-messages";
 import { Router } from "@angular/router";
-import { DataService } from "../../services/data.service";
+import { DataService } from "../../../services/data.service";
 import { Input } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import {
@@ -11,8 +11,8 @@ import {
   FormControl,
   FormBuilder
 } from "@angular/forms";
-import { ValidateService } from "../../services/validate.service";
-import { UpdateService } from "../../services/update.service";
+import { ValidateService } from "../../../services/validate.service";
+import { UpdateService } from "../../../services/update.service";
 
 @Component({
   selector: "app-contact-create",

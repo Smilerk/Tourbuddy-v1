@@ -11,6 +11,7 @@ export class UpdateService {
   updateContacts(contactUpdate: boolean) {
     this.contactUpdateSource.next(contactUpdate);
   }
+  
   updateTour(tourUpdate: boolean) {
     this.tourUpdateSource.next(tourUpdate);
   }

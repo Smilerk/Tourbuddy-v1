@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService } from "../../services/data.service";
+import { DataService } from "../../../services/data.service";
 import { Router } from "@angular/router";
-import { UpdateService } from "../../services/update.service";
+import { UpdateService } from "../../../services/update.service";
 import { Subscription } from "rxjs/Subscription";
 
 @Component({
